@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="true"
+         cacheDirectory=".phpunit.cache"
+         failOnWarning="true"
+         failOnRisky="true"
+         beStrictAboutOutputDuringTests="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerErrors="true">
+    <testsuites>
+        <testsuite name="smsrouting">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <source ignoreIndirectDeprecations="true">
+        <!-- ignoreIndirectDeprecations: Laravel 8 на PHP 8.4+ сыплет
+             deprecation из своего кода (implicit nullable). Предупреждения
+             самого пакета при этом остаются видимыми. -->
+        <include>
+            <directory>src</directory>
+        </include>
+    </source>
+</phpunit>

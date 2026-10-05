@@ -1,0 +1,63 @@
+{
+    "name": "smsrouting/laravel",
+    "description": "Country-aware SMS routing for Laravel: per-country gateway chains, failover, per-gateway OTP templates, multi-account gateway instances and a single notification channel.",
+    "keywords": [
+        "sms",
+        "laravel",
+        "notifications",
+        "routing",
+        "failover",
+        "otp"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "require": {
+        "php": "^8.1",
+        "giggsey/libphonenumber-for-php": "^8.12",
+        "illuminate/config": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/container": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/events": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/log": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/notifications": "^8.0|^9.0|^10.0|^11.0",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+        "psr/log": "^1.0|^2.0|^3.0"
+    },
+    "require-dev": {
+        "phpoption/phpoption": "^1.8|^2.0",
+        "phpunit/phpunit": "^10.5|^11.0",
+        "vlucas/phpdotenv": "^5.4|^6.0|^7.0"
+    },
+    "suggest": {
+        "greensms/greensms": "Адаптер GreenSmsGateway (sms.gateways.greensms).",
+        "intergo/sms.to-laravel-lumen": "Адаптер SmsToGateway (sms.gateways.smsto).",
+        "nekkoy/gateway-smsfly": "Адаптер SmsFlyGateway (sms.gateways.smsfly)."
+    },
+    "autoload": {
+        "psr-4": {
+            "SmsRouting\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SmsRouting\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmsRouting\\SmsRoutingServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "test": "phpunit",
+        "test:watch": "phpunit --watch"
+    }
+}
